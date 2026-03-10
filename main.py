@@ -14,13 +14,5 @@ def usuarios():
 def produtos():
     return render_template("produtos.html")
 
-@app.route("/fornecedores")
-def fornecedores():
-    return render_template("fornecedores.html")
-
-@app.route("/vendas")
-def vendas():
-    return render_template("vendas.html")
-
 if __name__ == '__main__':
     app.run(debug=True)
