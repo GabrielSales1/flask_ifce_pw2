@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Menu Principal</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <a href="/usuarios" class="text-decoration-none">
+                    <div class="card shadow-sm text-center p-4">
+                        <h5>Usuários</h5>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3">
+                <a href="/produtos" class="text-decoration-none">
+                    <div class="card shadow-sm text-center p-4">
+                        <h5>Produtos</h5>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3">
+                <a href="/fornecedores" class="text-decoration-none">
+                    <div class="card shadow-sm text-center p-4">
+                        <h5>Fornecedores</h5>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3">
+                <a href="/vendas" class="text-decoration-none">
+                    <div class="card shadow-sm text-center p-4">
+                        <h5>Vendas</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

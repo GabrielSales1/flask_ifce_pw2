@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2 class="mb-4">Cadastro de Produtos</h2>
+
+<form>
+
+    <div class="mb-3">
+        <label for="codigo" class="form-label">Código</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            id="codigo"
+            placeholder="Digite o código do produto"
+            required
+        >
+    </div>
+
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            id="descricao"
+            placeholder="Digite a descrição"
+            required
+        >
+    </div>
+
+    <div class="mb-3">
+        <label for="preco" class="form-label">Preço</label>
+        <input 
+            type="number" 
+            step="0.01"
+            class="form-control" 
+            id="preco"
+            placeholder="Digite o preço"
+            required
+        >
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Cadastrar
+    </button>
+
+    <a href="/" class="btn btn-secondary">
+        Voltar
+    </a>
+
+</form>
+{% endblock %}
