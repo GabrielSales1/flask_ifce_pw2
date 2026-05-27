@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Interativo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo" >
+            <img  src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="logo-img">
+        </div>
+        
+        <!-- Menu para desktop -->
+        <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Início</a></li>
+            
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Produtos</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('cadprodutos') }}">Novo Produto</a>
+                    <a href="{{ url_for('listprodutos') }}">Lista de Produtos</a>
+                </div>
+            </li>
+            
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Relatórios</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('dashboard') }}">Graficos</a>
+                    <a href="#mobile">Relatório Gerencial</a>
+                    <a href="#marketing">Relatório  de Vendas</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Clientes</a>
+                <div class="dropdown-content">
+                    <a href="{{url_for('cadCliente')}}">Cadastrar</a>
+                    <a href="{{url_for('listaCliente')}}">Listar</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Contato</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('contato') }}">Contato</a>
+                    <a href="{{ url_for('sobre') }}">Sobre</a>
+                </div>
+            </li>
+
+             <li class="dropdown">
+                <a href="#" class="dropbtn">Configuração</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('list_user') }}">Usuários</a>
+                    <a href="{{ url_for('new_user') }}">Novo Usuário</a>
+                </div>
+            </li>
+        </ul>
+        
+        <!-- Botão do menu mobile -->
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Início</a></li>
+            <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+            <li class="mobile-dropdown">
+                <a href="#" class="mobile-dropdown-toggle">Serviços</a>
+                <div class="mobile-dropdown-content">
+                    <a href="#web">Web Design</a>
+                    <a href="#mobile">Mobile Apps</a>
+                    <a href="#marketing">Marketing</a>
+                </div>
+            </li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </div>
+
+    <!-- Conteúdo da página -->
+    <div class="content">
+       {% block content %}
+        <h1>Bem-vindo ao nosso site</h1>
+        <p>Este é um exemplo de menu responsivo com JavaScript.</p>
+       {% endblock %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

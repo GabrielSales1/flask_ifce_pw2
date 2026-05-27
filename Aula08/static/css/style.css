@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #2ad34f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #2ad34f;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2ad34f;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #333;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+/* Mobile menu */
+.mobile-menu {
+    display: none;
+    background-color: #333;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    border-bottom: 1px solid #444;
+}
+
+.mobile-menu li a:hover {
+    background-color: #2ad34f;;
+}
+
+/* Mobile dropdown */
+.mobile-dropdown-content {
+    display: none;
+    background-color: #444;
+}
+
+.mobile-dropdown-content.show {
+    display: block;
+}
+
+.mobile-dropdown-content a {
+    padding-left: 2rem;
+}
+
+/* Content */
+.content {
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .mobile-menu.show {
+        display: block;
+    }
+}
+
+/* Animation for mobile menu button */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.logo-img {
+    width: 120px; height: 60px;
+}
+
+.content_login{
+    border: 1px solid black;  width: 600px; margin-left: 30%; margin-top: 10%; 
+}
+
+.content_login_interno{
+   display: flex; display: flex; flex-direction: column; margin: 30px; flex-wrap: wrap; gap: 20px;
+}
+
+.content_input{
+    width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;
+}
+
+.button{
+    width: 100%; padding: 10px; background-color: #2ad34f; color: white; border: none; border-radius: 4px; cursor: pointer;
+}
+
+
+table {
+  border-collapse: collapse; /* Une as bordas */
+  width: 100%; /* Opcional: tabela com largura total */
+}
+
+table, th, td {
+  border: 1px solid black; /* Define borda sólida de 1px preta */
+}
+
+th, td {
+  padding: 10px; /* Opcional: adiciona espaçamento interno */
+  text-align: left; /* Opcional: alinhamento de texto */
+}

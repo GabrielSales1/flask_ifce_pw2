@@ -1,0 +1,32 @@
+{% extends "layout.html"%}
+{% block content %}
+
+
+   {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% if msg %}
+        <p style="color: green;">{{ msg }}</p>
+    {% endif %}
+<h1>Lista de Usuários</h1>
+<br/>
+<table style="border: 2pt solid black;">
+    <tr>
+        <th >Login</th>
+        <th >Nome</th>
+        <th >Editar</th>
+         <th >Excluir</th>
+    </tr>
+    {% for user in list %}
+    <tr>
+        <td>{{ user.login }}</td>
+        <td>{{ user.nome }}</td>
+        <td><a href="{{url_for('update_user', id=user.id)}}">Editar</a></td>
+        <td><a onclick="return confirm('Deseja realmente excluir?')" href="{{url_for('delete_user', id=user.id)}}">Excluir</a></td>
+    </tr>
+    {%endfor%} 
+
+</table>
+
+
+{% endblock %}

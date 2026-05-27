@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<form method="post" action="{{url_for('salvarAlterar')}}" style="display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 2rem;">
+    
+    <input type="hidden" name="id" value="{{ c.id }}">
+    
+    <label>NOME:</label>
+    <input type="text" name="nome" value="{{ c.nome }}" required>
+    <label>EMAIL:</label>
+    <input type="email" name="email" value="{{ c.email }}" required>
+    <label>ENDEREÇO:</label>
+    <input type="text" name="endereco" value="{{ c.endereco }}" required>
+    <label>TELEFONE:</label>
+    <input type="text" name="telefone" value="{{ c.telefone }}" required> <BR>
+    <button type="submit" value="ENVIAR" style="width: 170px; padding: 10px;">ENVIAR</button>
+</form>
+{% endblock %}

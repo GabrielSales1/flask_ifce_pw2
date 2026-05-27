@@ -1,0 +1,36 @@
+{% extends "layout.html"%}
+{% block content %}
+<h1>Lista de Produtos</h1>
+<br>
+<div>
+    <form action="{{url_for('pesquisarprodutos')}}" method="GET">
+    <label>Código: </label>
+    <input type="text" id="codigo" name="codigo" value="{{produto.codigo}}">
+    <label>Descrição: </label>
+    <input type="text" id="descricao" name="descricao" value="{{produto.descricao}}">
+    <input type="submit" value="Filtrar">
+    </form>
+</div>
+
+</div>
+<table style="border: 2pt solid black;">
+    <tr>
+        <th >Código</th>
+        <th >Descrição</th>
+        <th >Preço</th>
+        <th >Editar</th>
+         <th >Excluir</th>
+    </tr>
+    {% for p in produtos %}
+    <tr>
+        <td>{{ p.codigo }}</td>
+        <td>{{ p.descricao }}</td>
+        <td>{{ p.preco }}</td>
+        <td><a href="{{url_for('update_produto', id=p.id)}}">Editar</a></td>
+        <td><a onclick="return confirm('Deseja realmente excluir?')" href="{{url_for('delete_produto', id=p.id)}}">Excluir</a></td>
+    </tr>
+    {%endfor%} 
+
+</table>
+
+{% endblock %}

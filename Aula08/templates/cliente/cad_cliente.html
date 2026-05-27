@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<form method="post" action="{{url_for('salvarCliente')}}" style="display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 2rem;">
+    <label>NOME:</label>
+    <input type="text" name="nome" required>
+    <label>EMAIL:</label>
+    <input type="email" name="email" required>
+    <label>ENDEREÇO:</label>
+    <input type="text" name="endereco" required>
+    <label>TELEFONE:</label>
+    <input type="telefone" name="telefone" required> <BR>
+    <button type="submit" value="ENVIAR" style="width: 170px; padding: 10px;">ENVIAR</button>
+</form>
+{% endblock %}
