@@ -50,6 +50,8 @@ from controllers.UsuarioController import *
 from controllers.ProdutoController import *
 from controllers.TipoProdutoController import *
 from controllers.ClienteController import *
+from controllers.api_produtos import *
+from controllers.api_admins import *
 
 if ( __name__ == "__main__"):
     app.run(debug=True, port=5001)
